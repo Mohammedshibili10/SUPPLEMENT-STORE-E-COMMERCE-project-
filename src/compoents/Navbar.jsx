@@ -7,7 +7,8 @@ import { IoPersonCircleOutline } from "react-icons/io5";
 export default function Navbar() {
   const [open,setOpen]=useState(false)
   const navigate= useNavigate()
-  const isLoggedin= localStorage.getItem('isLoggedin')
+  const isLoggedin= localStorage.getItem('isLoggedin') 
+  const loggedout= localStorage.removeItem('isLoggedin')
   function add(){
   setOpen(!open)
   }
@@ -37,7 +38,7 @@ export default function Navbar() {
           <div className='w-12 h-12 rounded-full bg-red-500 relative'>
             <img className='w-7  absolute left-2 top-2' src="/images/shopping-cart.png" alt="error" /></div>
           <div className='hidden md:block'>
-            {isLoggedin ? <IoPersonCircleOutline className='w-12 h-12 text-red-500'/> :  <button onClick={handleclick} className='w-40 h-10 bg-red-500 rounded-md text-white font-bold'>GET STARTED</button>   }
+            { isLoggedin ? (<IoPersonCircleOutline className='w-12 h-12 text-red-500'/>) : loggedout ?( <button onClick={handleclick} className='w-40 h-10 bg-red-500 rounded-md text-white font-bold'>GET STARTED</button> ):(null)  }
           </div>
         </div>
         <div className='md:hidden' >
