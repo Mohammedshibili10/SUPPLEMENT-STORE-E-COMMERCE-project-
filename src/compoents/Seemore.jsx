@@ -98,7 +98,7 @@ export default function Seemore() {
    
   const [product,setProduct]=useState([])
   useEffect(()=>{
-    axios.get('http://localhost:5555/product')
+    axios.get('https://supplement-store-backend.onrender.com/product')
     .then((res)=>{setProduct(res.data.data)})
     .catch((error)=>{console.log(error)})
   },[])
@@ -115,7 +115,7 @@ export default function Seemore() {
             {product?.slice(0.5).map((prod) => (
                 <div key={prod._id} className='border-2 broder-gray-500 w-85 md:w-100 h-125 mt-5 rounded-xl  bg-black text-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:border-red-500' >
                     <div className='relative' onClick={()=>handleMove(prod._id)}>
-                        <img className='w-100 h-65 rounded-t-xl ' src={`http://localhost:5555/uploads/${prod.image}`} alt="error" />
+                        <img className='w-100 h-65 rounded-t-xl ' src={`https://supplement-store-backend.onrender.com/uploads/${prod.image}`} alt="error" />
                         <div className=' absolute bottom-52 left-52 md:left-68 w-28 h-7 text-sm font-bold bg-red-500 text-center pt-1 rounded-full  '>{prod.feature}</div>
                     </div>
                     <div className='px-5  space-y-2'>

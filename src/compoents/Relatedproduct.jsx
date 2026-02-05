@@ -47,7 +47,7 @@ export default function Relatedproduct() {
     
     const [product,setProduct]=useState([])
     useEffect(()=>{
-      axios.get(`http://localhost:5555/product`)
+      axios.get(`https://supplement-store-backend.onrender.com/product`)
       .then((res)=>{setProduct(res.data.data)})
       .catch((error)=>{console.log(error)})
 
@@ -60,7 +60,7 @@ export default function Relatedproduct() {
       {product?.slice(0,5).map((prod) => (
         <div  className='min-w-[280px] md:w-[300px] h-[400px] border-2 border-gray-500 rounded-xl bg-black text-white transition duration-300 hover:scale-105 hover:border-red-500 ' >
           <div className='relative'>
-            <img className='w-full h-[200px] object-cover rounded-t-xl ' src={`http://localhost:5555/uploads/${prod.image}`} alt="error" />
+            <img className='w-full h-[200px] object-cover rounded-t-xl ' src={`https://supplement-store-backend.onrender.com/uploads/${prod.image}`} alt="error" />
             
           </div>
           <div className='px-3  space-y-1'>

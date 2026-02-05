@@ -19,7 +19,7 @@ export default function Signup() {
         const data = {
             name, email, password
         }
-        axios.post('http://localhost:5555/users', data)
+        axios.post('https://supplement-store-backend.onrender.com/users', data)
             .then(() => {
                 console.log("successfully added");
 

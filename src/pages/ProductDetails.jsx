@@ -122,7 +122,7 @@ export default function ProductDetails() {
     // ]
     const [product, setProduct] = useState(null)
     useEffect(() => {
-        axios.get(`http://localhost:5555/product/${id}`)
+        axios.get(`https://supplement-store-backend.onrender.com/product/${id}`)
             .then((res) => { setProduct(res.data.data)})
 
             .catch((error) => console.log(error))
@@ -135,7 +135,7 @@ export default function ProductDetails() {
         <>
             <div key={product._id} className='text-white lg:flex px-5 lg:px-50 gap-50 mt-20 '>
                 <div className='flex md:gap-5 '>
-                    <img className='border w-full md:w-150 h-100 md:h-150 rounded-lg ' src={`http://localhost:5555/uploads/${product.image}`} alt="error" />
+                    <img className='border w-full md:w-150 h-100 md:h-150 rounded-lg ' src={`https://supplement-store-backend.onrender.com/uploads/${product.image}`} alt="error" />
 
 
                     <Wishlist />

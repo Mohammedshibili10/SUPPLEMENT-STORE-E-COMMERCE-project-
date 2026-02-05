@@ -50,7 +50,7 @@ export default function Productcard({product}) {
       {product?.slice(0,3).map((prod) => (
         <div key={prod._id} className='border-2 broder-gray-500 w-85 md:w-100 h-155 rounded-xl bg-black text-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:border-red-500 mt-5 '>
           <div className='relative cursor-pointer'  onClick={() => handleMove(prod._id)}>
-            <img className='w-100 h-95 rounded-t-xl ' src={`http://localhost:5555/uploads/${prod.image}`} alt="error" />
+            <img className='w-100 h-95 rounded-t-xl ' src={`https://supplement-store-backend.onrender.com/uploads/${prod.image}`} alt="error" />
             <div className=' absolute bottom-82 left-52 md:left-68 w-28 h-7 text-sm font-bold bg-red-500 text-center pt-1 rounded-full  '>{prod.feature}</div>
           </div>
           <div className='px-5  space-y-2'>
@@ -58,13 +58,13 @@ export default function Productcard({product}) {
             <h1 className='font-bold text-xl cursor-pointer' onClick={() => handleMove(prod._id)}>{prod.name}</h1>
             <p className=''>{prod.description}</p>
             <div className='flex justify-between mt-7 items-center'>
-              <h1 className='text-3xl font-bold text-red-500'> {prod.price}</h1>
-             <Link to={'/cart'}> <button className='w-30 h-10 bg-red-500 rounded-lg font-bold' > ADD TO CART</button></Link>
+              <h1 className='text-3xl font-bold text-red-500'> ${prod.price}</h1>
+              <Link to={'/cart'}> <button className='w-30 h-10 bg-red-500 rounded-lg font-bold' > ADD TO CART</button></Link>
+              </div>
             </div>
-          </div>
-        </div> ))}
+          </div> ))}
+          
         
-       
-    </div>
-  )
+      </div>
+    )
 }

@@ -9,7 +9,7 @@ export default function Product() {
   const [loading,setLoading]=useState(false);
   useEffect(()=>{
     setLoading(true);
-    axios.get(`http://localhost:5555/product`)
+    axios.get(`https://supplement-store-backend.onrender.com/product`)
     .then((res)=>{
       setProduct(res.data.data);
       setLoading(false);

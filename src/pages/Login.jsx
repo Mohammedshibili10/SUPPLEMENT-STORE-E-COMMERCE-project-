@@ -28,7 +28,7 @@ export default function Login() {
         //      email, password
         // }
 
-        axios.post('http://localhost:5555/login', {email,password})
+        axios.post('https://supplement-store-backend.onrender.com/login', {email,password})
        
             .then((res) => {
                  localStorage.setItem("token",res.data.token)
